@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_SMAA:
     settings:
       debugPass: 0
-      quality: 2
+      quality: 3
       edgeDetectionMethod: 2
     quality:
       diagonalDetection: 1
@@ -1563,15 +1563,15 @@ MonoBehaviour:
   m_FXAA:
     preset:
       qualitySettings:
-        subpixelAliasingRemovalAmount: 0.75
-        edgeDetectionThreshold: 0.166
-        minimumRequiredLuminance: 0.0833
+        subpixelAliasingRemovalAmount: 1
+        edgeDetectionThreshold: 0.063
+        minimumRequiredLuminance: 0.0312
       consoleSettings:
         subpixelSpreadAmount: 0.5
-        edgeSharpnessAmount: 8
+        edgeSharpnessAmount: 2
         edgeDetectionThreshold: 0.125
-        minimumRequiredLuminance: 0.05
-  m_Method: 0
+        minimumRequiredLuminance: 0.04
+  m_Method: 1
 --- !u!114 &11473958
 MonoBehaviour:
   m_ObjectHideFlags: 1
