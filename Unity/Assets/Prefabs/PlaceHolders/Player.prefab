@@ -254,7 +254,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &128022
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -811,7 +811,6 @@ Transform:
   - {fileID: 439166}
   - {fileID: 480296}
   - {fileID: 497800}
-  - {fileID: 468752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &437628
@@ -836,7 +835,8 @@ Transform:
   m_LocalRotation: {x: -0.000000119209275, y: -6.4133874e-17, z: -3.0460492e-18, w: 1}
   m_LocalPosition: {x: 0.2749939, y: 1.3762455, z: -0.25987244}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 468752}
   m_Father: {fileID: 437592}
   m_RootOrder: 0
 --- !u!4 &439634
@@ -977,12 +977,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalRotation: {x: 0.000000119209275, y: 6.4133874e-17, z: 3.0460492e-18, w: 1}
+  m_LocalPosition: {x: -0.2749939, y: -1.3762461, z: 2.2598722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 437592}
-  m_RootOrder: 3
+  m_Father: {fileID: 439166}
+  m_RootOrder: 0
 --- !u!4 &477724
 Transform:
   m_ObjectHideFlags: 1
@@ -1541,10 +1541,10 @@ MonoBehaviour:
   m_HistogramShader: {fileID: 4800000, guid: 9a8e838691462194482a43a02e424876, type: 3}
   histogramRefreshOnPlay: 1
   m_EyeAdaptation:
-    enabled: 0
+    enabled: 1
     middleGrey: 0.5
     min: -3
-    max: 3
+    max: 0
     speed: 1.5
     showDebug: 0
   m_Tonemapping:
