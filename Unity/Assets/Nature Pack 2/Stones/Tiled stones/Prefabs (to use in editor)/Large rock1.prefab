@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 64: {fileID: 6497386}
   m_Layer: 0
   m_Name: Large rock1
   m_TagString: Untagged
@@ -74,6 +75,18 @@ MeshFilter:
 --- !u!1002 &3300001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!64 &6497386
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 6cd10f8b65b99ca4c9a64a5b1cd612e3, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

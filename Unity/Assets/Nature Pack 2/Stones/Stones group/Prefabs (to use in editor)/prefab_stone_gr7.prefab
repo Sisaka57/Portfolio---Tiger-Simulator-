@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 64: {fileID: 6467918}
   m_Layer: 0
   m_Name: prefab_stone_gr7
   m_TagString: Untagged
@@ -74,6 +75,18 @@ MeshFilter:
 --- !u!1002 &3300001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!64 &6467918
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 7261f1d3ca38a744e8e321fecb862d1a, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
