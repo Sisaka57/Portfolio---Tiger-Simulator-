@@ -20,12 +20,6 @@ public class SmoothMouseLook : MonoBehaviour {
 	float rotationX = 0F;
 	float rotationY = 0F;
 
-	private List<float> rotArrayX = new List<float>();
-	float rotAverageX = 0F;	
-
-	private List<float> rotArrayY = new List<float>();
-	float rotAverageY = 0F;
-
 	public float frameCounter = 20;
 
 	private int playerID = 0;
@@ -44,82 +38,22 @@ public class SmoothMouseLook : MonoBehaviour {
 	{
 		if (Input.GetKey (KeyCode.Escape))
 			Cursor.lockState = CursorLockMode.None;
-		if (axes == RotationAxes.MouseXAndY)
-		{			
-			rotAverageY = 0f;
-			rotAverageX = 0f;
-
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-
-			rotArrayY.Add(rotationY);
-			rotArrayX.Add(rotationX);
-
-			if (rotArrayY.Count >= frameCounter) {
-				rotArrayY.RemoveAt(0);
-			}
-			if (rotArrayX.Count >= frameCounter) {
-				rotArrayX.RemoveAt(0);
-			}
-
-			for(int j = 0; j < rotArrayY.Count; j++) {
-				rotAverageY += rotArrayY[j];
-			}
-			for(int i = 0; i < rotArrayX.Count; i++) {
-				rotAverageX += rotArrayX[i];
-			}
-
-			rotAverageY /= rotArrayY.Count;
-			rotAverageX /= rotArrayX.Count;
-
-			rotAverageY = ClampAngle (rotAverageY, minimumY, maximumY);
-			rotAverageX = ClampAngle (rotAverageX, minimumX, maximumX);
-
-			Quaternion yQuaternion = Quaternion.AngleAxis (rotAverageY, Vector3.left);
-			Quaternion xQuaternion = Quaternion.AngleAxis (rotAverageX, Vector3.up);
-
-			transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-		}
-		else if (axes == RotationAxes.MouseX)
-		{			
-			rotAverageX = 0f;
-
+		if (axes == RotationAxes.MouseX)
+		{	
 			rotationX += player.GetAxis ("Look Horizontal") * sensitivityX;
 
-			rotArrayX.Add(rotationX);
+			rotationX = ClampAngle (rotationX, minimumX, maximumX);
 
-			if (rotArrayX.Count >= frameCounter) {
-				rotArrayX.RemoveAt(0);
-			}
-			for(int i = 0; i < rotArrayX.Count; i++) {
-				rotAverageX += rotArrayX[i];
-			}
-			rotAverageX /= rotArrayX.Count;
-
-			rotAverageX = ClampAngle (rotAverageX, minimumX, maximumX);
-
-			Quaternion xQuaternion = Quaternion.AngleAxis (rotAverageX, Vector3.up);
+			Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
 			transform.localRotation = originalRotation * xQuaternion;			
 		}
 		else
-		{			
-			rotAverageY = 0f;
-
+		{
 			rotationY += player.GetAxis ("Look Vertical") * sensitivityY;
 
-			rotArrayY.Add(rotationY);
+			rotationY = ClampAngle (rotationY, minimumY, maximumY);
 
-			if (rotArrayY.Count >= frameCounter) {
-				rotArrayY.RemoveAt(0);
-			}
-			for(int j = 0; j < rotArrayY.Count; j++) {
-				rotAverageY += rotArrayY[j];
-			}
-			rotAverageY /= rotArrayY.Count;
-
-			rotAverageY = ClampAngle (rotAverageY, minimumY, maximumY);
-
-			Quaternion yQuaternion = Quaternion.AngleAxis (rotAverageY, Vector3.left);
+			Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, Vector3.left);
 			transform.localRotation = originalRotation * yQuaternion;
 		}
 	}
