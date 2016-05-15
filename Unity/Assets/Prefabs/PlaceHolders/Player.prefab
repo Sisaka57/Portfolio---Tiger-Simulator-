@@ -30,6 +30,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &103000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 413692}
+  m_Layer: 0
+  m_Name: FPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &103092
 GameObject:
   m_ObjectHideFlags: 1
@@ -145,6 +160,21 @@ GameObject:
   - 4: {fileID: 402842}
   m_Layer: 0
   m_Name: Tiger_l_HindLeg_Knee1SHJnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &119566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 405904}
+  m_Layer: 0
+  m_Name: TPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,6 +702,18 @@ Transform:
   - {fileID: 436984}
   m_Father: {fileID: 440238}
   m_RootOrder: 0
+--- !u!4 &405904
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.25, y: 1.35, z: -0.255}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 437592}
+  m_RootOrder: 3
 --- !u!4 &406792
 Transform:
   m_ObjectHideFlags: 1
@@ -697,6 +739,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431592}
   m_RootOrder: 1
+--- !u!4 &413692
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 437592}
+  m_RootOrder: 4
 --- !u!4 &418336
 Transform:
   m_ObjectHideFlags: 1
@@ -811,6 +865,8 @@ Transform:
   - {fileID: 439166}
   - {fileID: 480296}
   - {fileID: 497800}
+  - {fileID: 405904}
+  - {fileID: 413692}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &437628
@@ -833,7 +889,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127416}
   m_LocalRotation: {x: -0.000000119209275, y: -6.4133874e-17, z: -3.0460492e-18, w: 1}
-  m_LocalPosition: {x: 0.2749939, y: 1.3762455, z: -0.25987244}
+  m_LocalPosition: {x: 0, y: 0.9, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468752}
@@ -1285,6 +1341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b633cd6d3f07e624d9e8324261e28d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TPS: {fileID: 405904}
+  FPS: {fileID: 413692}
+  Camera: {fileID: 439166}
 --- !u!114 &11441816
 MonoBehaviour:
   m_ObjectHideFlags: 1

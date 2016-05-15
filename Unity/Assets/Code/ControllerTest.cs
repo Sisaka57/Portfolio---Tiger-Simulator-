@@ -9,11 +9,15 @@ using System.Collections.Generic;
 
 public class ControllerTest : MonoBehaviour
 {
+	public Transform TPS,FPS;
+	public Transform Camera;
 	private CharacterMotor motor;
 	private int playerID = 0;
 	private Player player;
 	private Animator thisAnimator;
 	private Vector3 thisInput = Vector3.zero;
+
+	private bool View = true;
 
 	private void Awake()
 	{
@@ -57,6 +61,12 @@ public class ControllerTest : MonoBehaviour
 		}
 		// Apply the direction to the CharacterMotor
 		motor.inputMoveDirection = transform.rotation * thisInput;
-		motor.inputJump = player.GetButton ("Jump");
+		motor.inputJump = player.GetButton("Jump");
+		if (player.GetButtonDown ("View"))
+			View = !View;
+		if (View)
+			Camera.localPosition = TPS.localPosition;
+		else
+			Camera.localPosition = FPS.localPosition;
 	}
 }
