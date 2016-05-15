@@ -1397,7 +1397,7 @@ MonoBehaviour:
   jumping:
     enabled: 1
     baseHeight: 1
-    extraHeight: 4.1
+    extraHeight: 0.1
     perpAmount: 0
     steepPerpAmount: 0.5
   movingPlatform:
@@ -1541,10 +1541,10 @@ MonoBehaviour:
   m_HistogramShader: {fileID: 4800000, guid: 9a8e838691462194482a43a02e424876, type: 3}
   histogramRefreshOnPlay: 1
   m_EyeAdaptation:
-    enabled: 1
+    enabled: 0
     middleGrey: 0.5
     min: -3
-    max: 0
+    max: 0.5
     speed: 1.5
     showDebug: 0
   m_Tonemapping:

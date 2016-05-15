@@ -2517,6 +2517,10 @@ Prefab:
       propertyPath: m_EyeAdaptation.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11447918, guid: 83b01ecfb36d4b94aa1b591bf12676c7, type: 2}
+      propertyPath: jumping.extraHeight
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83b01ecfb36d4b94aa1b591bf12676c7, type: 2}
   m_IsPrefabParent: 0
