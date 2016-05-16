@@ -28,13 +28,16 @@ public class CharacterMotor : MonoBehaviour
 	[System.NonSerialized]
 	public bool isSprint = false;
 
+	[System.NonSerialized]
+	public bool isCrouch = false;
+
     [System.Serializable]
     public class CharacterMotorMovement
     {
         // The maximum horizontal speed when moving
+		public float maxCrouchSpeed = 1f;
 		public float maxWalkSpeed = 3.0f;
 		public float maxRunSpeed = 6.0f;
-        public float maxForwardSpeed = 3.0f;
         public float maxSidewaysSpeed = 2.0f;
         public float maxBackwardsSpeed = 2.0f;
 
@@ -302,7 +305,7 @@ public class CharacterMotor : MonoBehaviour
         // We were grounded but just loosed grounding
         if(grounded && !IsGroundedTest())
         {
-            grounded = false;
+			grounded = false;
 
             // Apply inertia from platform
             if(movingPlatform.enabled &&
@@ -434,16 +437,15 @@ public class CharacterMotor : MonoBehaviour
 
     private Vector3 ApplyGravityAndJumping(Vector3 velocity)
     {
-
         if(!inputJump || !canControl)
         {
             jumping.holdingJumpButton = false;
             jumping.lastButtonDownTime = -100;
         }
 
-        if(inputJump && jumping.lastButtonDownTime < 0 && canControl)
-            jumping.lastButtonDownTime = Time.time;
-
+		if (inputJump && jumping.lastButtonDownTime < 0 && canControl) {
+			jumping.lastButtonDownTime = Time.time;
+		}
         if(grounded)
             velocity.y = Mathf.Min(0, velocity.y) - movement.gravity * Time.deltaTime;
         else
@@ -643,9 +645,15 @@ public class CharacterMotor : MonoBehaviour
         else
         {
 			float zAxisEllipseMultiplier = 0f;
-			if(isSprint)
+			if (isCrouch) {
+				zAxisEllipseMultiplier = (desiredMovementDirection.z > 0 ? movement.maxCrouchSpeed : movement.maxBackwardsSpeed) / movement.maxSidewaysSpeed;
+				if (isSprint)
+					isCrouch = !isCrouch;
+			} else if (isSprint) {
 				zAxisEllipseMultiplier = (desiredMovementDirection.z > 0 ? movement.maxRunSpeed : movement.maxBackwardsSpeed) / movement.maxSidewaysSpeed;
-			else
+				if (isCrouch)
+					isSprint = !isSprint;
+			} else
 				zAxisEllipseMultiplier = (desiredMovementDirection.z > 0 ? movement.maxWalkSpeed : movement.maxBackwardsSpeed) / movement.maxSidewaysSpeed;
             Vector3 temp = new Vector3(desiredMovementDirection.x, 0, desiredMovementDirection.z / zAxisEllipseMultiplier).normalized;
             float length = new Vector3(temp.x, 0, temp.z * zAxisEllipseMultiplier).magnitude * movement.maxSidewaysSpeed;
