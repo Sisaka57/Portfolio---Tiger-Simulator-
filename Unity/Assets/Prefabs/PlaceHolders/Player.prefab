@@ -1301,6 +1301,7 @@ MonoBehaviour:
   FPS: {fileID: 413692}
   Camera: {fileID: 439166}
   Renderer: {fileID: 188836}
+  Stamina: 100
 --- !u!114 &11441816
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,6 +22,9 @@ public class ControllerTest : MonoBehaviour
 	private bool Crouch = false;
 	private bool Sprint = false;
 
+	[HideInInspector]
+	public float Stamina = 100f;
+
 	private void Awake()
 	{
 		motor = GetComponent<CharacterMotor>();
