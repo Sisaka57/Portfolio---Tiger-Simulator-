@@ -269,7 +269,6 @@ GameObject:
   - 81: {fileID: 8181264}
   - 114: {fileID: 11459982}
   - 114: {fileID: 11454866}
-  - 114: {fileID: 11417354}
   - 114: {fileID: 11446428}
   - 114: {fileID: 11480456}
   - 114: {fileID: 11441816}
@@ -1287,50 +1286,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11417354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3ff4a1bef2e8d47a1dfb734aa54de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings:
-    basicSettings:
-      reflectionMultiplier: 1
-      maxDistance: 100
-      fadeDistance: 100
-      screenEdgeFading: 0.03
-      enableHDR: 1
-      additiveReflection: 0
-    reflectionSettings:
-      maxSteps: 512
-      rayStepSize: 1
-      widthModifier: 0.5
-      smoothFallbackThreshold: 0.2
-      smoothFallbackDistance: 0.05
-      fresnelFade: 0.2
-      fresnelFadePower: 2
-      distanceBlur: 1
-    advancedSettings:
-      temporalFilterStrength: 0.7
-      useTemporalConfidence: 1
-      traceBehindObjects: 1
-      highQualitySharpReflections: 1
-      traceEverywhere: 1
-      treatBackfaceHitAsMiss: 0
-      allowBackwardsRays: 0
-      improveCorners: 1
-      resolution: 1
-      bilateralUpsample: 1
-      reduceBanding: 1
-      highlightSuppression: 0
-    debugSettings:
-      debugMode: 0
-  m_Shader: {fileID: 4800000, guid: 7e2fcc83af19e744787647ec0ac5d42c, type: 3}
 --- !u!114 &11423386
 MonoBehaviour:
   m_ObjectHideFlags: 1
