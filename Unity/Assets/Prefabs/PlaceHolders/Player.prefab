@@ -430,6 +430,7 @@ GameObject:
   - 114: {fileID: 11423386}
   - 114: {fileID: 11496806}
   - 114: {fileID: 11447918}
+  - 114: {fileID: 11464482}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -859,7 +860,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 178.78462, y: 30.352459, z: 142.05426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 439166}
@@ -1528,6 +1529,19 @@ MonoBehaviour:
     debug: 0
   _aoShader: {fileID: 4800000, guid: 65e203e5acda447acbf9dc1ef78c4a39, type: 3}
   _quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11464482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c4f2264d523f14ca93c81b8abf0e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadBone: {fileID: 498862}
+  Target: {fileID: 468752}
 --- !u!114 &11469768
 MonoBehaviour:
   m_ObjectHideFlags: 1

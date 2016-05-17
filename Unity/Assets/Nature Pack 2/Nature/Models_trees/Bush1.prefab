@@ -168,16 +168,16 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _TranslucencyColor
+        second: {r: 0.41748518, g: 0.46268654, b: 0.29694808, a: 1}
+      data:
+        first:
           name: _TreeInstanceColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _TreeInstanceScale
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _TranslucencyColor
-        second: {r: 0.41748518, g: 0.46268654, b: 0.29694808, a: 1}
 --- !u!1002 &2100003
 EditorExtensionImpl:
   serializedVersion: 6
@@ -191,7 +191,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100002}
+  - {fileID: 2100000, guid: cd287877d90bb1e4d87655a3ae57f48f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
